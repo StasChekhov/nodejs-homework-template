@@ -80,6 +80,7 @@ router.put("/:contactId", async (req, res, next) => {
    error.message = "Missing required name field";
    throw error;
   }
+
   const { contactId } = req.params;
   const result = await contacts.updateContact(contactId, req.body);
 
@@ -88,6 +89,7 @@ router.put("/:contactId", async (req, res, next) => {
    error.status = 404;
    throw error;
   }
+
   res.json(result);
  } catch (error) {
   next(error);

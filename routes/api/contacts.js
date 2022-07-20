@@ -6,15 +6,20 @@ const ctrl = require("../../controllers/contacts");
 
 const { ctrlWrapper } = require("../../helpers");
 
-const { validation, isValidId } = require("../../middlewares");
+const { validation, isValidId, authenticate } = require("../../middlewares");
 
-const { addSchema, updateFavoriteSchema } = require("../../models/contacts");
+const { addSchema, updateFavoriteSchema } = require("../../models/contact");
 
-router.get("/", ctrlWrapper(ctrl.getAllContact));
+router.get("/", authenticate, ctrlWrapper(ctrl.getAllContact));
 
 router.get("/:contactId", isValidId, ctrlWrapper(ctrl.getContactById));
 
-router.post("/", validation(addSchema), ctrlWrapper(ctrl.addContact));
+router.post(
+ "/",
+ authenticate,
+ validation(addSchema),
+ ctrlWrapper(ctrl.addContact)
+);
 
 router.delete("/:contactId", isValidId, ctrlWrapper(ctrl.removeById));
 

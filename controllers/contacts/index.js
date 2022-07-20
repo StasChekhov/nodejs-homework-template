@@ -1,4 +1,4 @@
-const addContact = require("./add");
+const addContact = require("./addContact");
 const getAllContact = require("./getAllContacts");
 const getContactById = require("./getContactById");
 const updateById = require("./updateById");

@@ -1,5 +1,5 @@
 const addContact = require("./addContact");
-const getAllContact = require("./getAllContacts");
+const getAllContact = require("./getAllContact");
 const getContactById = require("./getContactById");
 const updateById = require("./updateById");
 const removeById = require("./removeById");

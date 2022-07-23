@@ -7,7 +7,6 @@ const app = express();
 
 const contactsRouter = require("./routes/api/contacts");
 const authRouter = require("./routes/api/auth");
-const { randomUUID } = require("crypto");
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
